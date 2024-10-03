@@ -1,0 +1,77 @@
+// Vehicle class
+class Vehicle {
+    private String model;
+    private int year;
+    private String color;
+
+    public Vehicle(String model, int year, String color) {
+        this.model = model;
+        this.year = year;
+        this.color = color;
+    }
+
+    public void displayDetails() {
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Color: " + color);
+    }
+}
+
+// Car class inheriting from Vehicle
+class Car extends Vehicle {
+    private int numberOfDoors;
+
+    public Car(String model, int year, String color, int numberOfDoors) {
+        super(model, year, color);
+        this.numberOfDoors = numberOfDoors;
+    }
+
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Number of Doors: " + numberOfDoors);
+    }
+}
+
+// Motorcycle class inheriting from Vehicle
+class Motorcycle extends Vehicle {
+    private int engineCapacity;
+
+    public Motorcycle(String model, int year, String color, int engineCapacity) {
+        super(model, year, color);
+        this.engineCapacity = engineCapacity;
+    }
+
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Engine Capacity: " + engineCapacity);
+    }
+}
+
+// Truck class inheriting from Vehicle
+class Truck extends Vehicle {
+    private double loadCapacity;
+
+    public Truck(String model, int year, String color, double loadCapacity) {
+        super(model, year, color);
+        this.loadCapacity = loadCapacity;
+    }
+
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Load Capacity: " + loadCapacity);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car("Toyota Camry", 2022, "Silver", 4);
+        Motorcycle motorcycle = new Motorcycle("Harley Davidson", 2020, "Black", 1000);
+        Truck truck = new Truck("Ford F-150", 2021, "Red", 2000.0);
+
+        car.displayDetails();
+        System.out.println();
+        motorcycle.displayDetails();
+        System.out.println();
+        truck.displayDetails();
+    }
+}
